@@ -4,6 +4,7 @@ const funcBtns = document.querySelectorAll(".function");
 const equalBtn = document.querySelector("#equals");
 const clearBtn = document.querySelector("#clear");
 const decimalBtn = document.querySelector("#decimal");
+const delBtn = document.querySelector('#delete');
 let result = '';
 let temp = '';
 let operator = '';
@@ -39,6 +40,9 @@ clearBtn.onclick = (e) => {
     display.value = '';
     operator = '';
     result = '';
+}
+delBtn.onclick = (e) => {
+    display.value = display.value.substring(0,display.value.length-1);
 }
 function add(a, b){ return a+b; }
 function multiply(a,b){ return a*b; }

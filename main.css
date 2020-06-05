@@ -48,7 +48,6 @@ html, body{
     background-color: grey; 
     grid-gap: 10px;
 }
-
 .buttons{
     margin: auto;
     width: 85px;
@@ -69,4 +68,8 @@ html, body{
 }
 .empty{
     opacity: 0;
+}
+.other{
+    background-color: rgb(48, 46, 46);
+    color: white;
 }
