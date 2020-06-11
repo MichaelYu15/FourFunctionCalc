@@ -6,7 +6,6 @@ const clearBtn = document.querySelector("#clear");
 const decimalBtn = document.querySelector("#decimal");
 const delBtn = document.querySelector('#delete');
 let result = '';
-let temp = '';
 let operator = '';
 let startNewNumber = true;
 numberBtns.forEach(button => {
@@ -23,7 +22,7 @@ funcBtns.forEach(button => {
         if(result == '')
             result = display.value;
         else{
-            result = operate(operator, parseInt(result), parseInt(display.value));
+            result = operate(operator, parseFloat(result), parseFloat(display.value));
             display.value = result;
         } 
         startNewNumber = true;
@@ -31,7 +30,7 @@ funcBtns.forEach(button => {
     })
 });
 equalBtn.onclick = (e) => {
-    result = operate(operator, parseInt(result), parseInt(display.value));
+    result = operate(operator, parseFloat(result), parseFloat(display.value));
     display.value = result;
     operator = '';
     result = '';
@@ -43,6 +42,11 @@ clearBtn.onclick = (e) => {
 }
 delBtn.onclick = (e) => {
     display.value = display.value.substring(0,display.value.length-1);
+}
+decimalBtn.onclick = (e) =>{
+    if(!display.value.includes('.')){
+        display.value += '.';
+    }
 }
 function add(a, b){ return a+b; }
 function multiply(a,b){ return a*b; }
